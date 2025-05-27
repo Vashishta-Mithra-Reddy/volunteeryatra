@@ -36,7 +36,7 @@ export const opportunities = [
         totalReviews: 34,
         rating: 4.8,
         yearsHosting: 5,
-        about: "A passionate farmer promoting eco-conscious living for over a decade."
+        about: "I'm Ramesh, a farmer by heart and by choice. For over a decade, I've dedicated my life to promoting sustainable agriculture and eco-conscious living. Our farm in Coorg is more than just a place to grow food—it's a sanctuary for those seeking peace, purpose, and a deeper connection with nature.\n\nI believe in the power of community and hands-on learning. Hosting volunteers has been a fulfilling journey, allowing me to share my passion while learning from people across the world. This place is my home, and I welcome you to become a part of its ongoing story."
       },
       ratings: [
         {
@@ -96,7 +96,7 @@ export const opportunities = [
         totalReviews: 50,
         rating: 4.7,
         yearsHosting: 3,
-        about: "Traveler turned hostel owner. Loves music, surf, and stories."
+        about: "Hey, I’m Anjali! I used to travel all over the country with a backpack, a guitar, and an open heart. Those journeys inspired me to create a space where people could feel at home no matter where they came from. That’s how our beach hostel in Gokarna came to be—an oceanfront home filled with music, stories, and strangers who turn into friends. \n\n I love connecting with like-minded wanderers, hosting jam sessions under the stars, and curating a laid-back yet meaningful experience for guests and volunteers. If you're looking to contribute, create memories, and embrace a carefree coastal lifestyle, you're in the right place. Let's share stories, sunsets, and a slice of the good life together."
       },
       ratings: [
         {
@@ -156,7 +156,7 @@ export const opportunities = [
         totalReviews: 20,
         rating: 4.9,
         yearsHosting: 4,
-        about: "A retired teacher who loves sharing stories and helping travelers explore the Himalayas."
+        about: "Namaste! I'm Tashi, a retired schoolteacher from Manali who now enjoys a peaceful life in the lap of the Himalayas. Teaching was my profession for over 30 years, and even though I've retired, I still find immense joy in guiding and learning from others. Hosting volunteers has opened a whole new chapter in my life—it lets me share my culture, language, and traditions while also learning about the world through fresh eyes.\n\n I enjoy gardening, cooking traditional Himachali food, and walking through the apple orchards nearby. My home is quiet, humble, and full of warmth, and I treat every volunteer like family. If you're open-hearted and ready to embrace simple mountain living, I’d love to welcome you."
       },
       ratings: [
         {
@@ -217,7 +217,7 @@ export const opportunities = [
         totalReviews: 20,
         rating: 4.9,
         yearsHosting: 4,
-        about: "A retired teacher who loves sharing stories and helping travelers explore the Himalayas."
+        about: "Namaste! I'm Tashi, a retired schoolteacher from Manali who now enjoys a peaceful life in the lap of the Himalayas. Teaching was my profession for over 30 years, and even though I've retired, I still find immense joy in guiding and learning from others. Hosting volunteers has opened a whole new chapter in my life—it lets me share my culture, language, and traditions while also learning about the world through fresh eyes.\n\n I enjoy gardening, cooking traditional Himachali food, and walking through the apple orchards nearby. My home is quiet, humble, and full of warmth, and I treat every volunteer like family. If you're open-hearted and ready to embrace simple mountain living, I’d love to welcome you."
       },
       ratings: [
         {

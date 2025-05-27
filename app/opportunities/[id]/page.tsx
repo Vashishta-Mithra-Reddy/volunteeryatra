@@ -207,23 +207,52 @@ export default async function OpportunityDetailPage({
           <hr className="border-2 border-gray-200 mb-4 mt-12"></hr>
           
 
-          {/* Hostx*/}
+           {/* Hostx */}
           <div className="w-full">
             <div className="bg-white p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-6">Meet Your Host</h2>
-              <div className="flex items-center mb-4">
-                <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-xl font-bold mr-4">
-                  {opportunity.host.name.charAt(0)}
+
+              <div className="flex flex-col md:flex-row gap-6">
+              
+                <div className="bg-gray-50 rounded-2xl border border-gray-200 w-full md:w-1/3 p-6 flex flex-col md:flex-row items-center md:items-start text-center md:text-left">
+                  
+                  {/* Avatar and Name */}
+                  <div className="flex flex-col items-center md:items-center md:w-1/2 mb-4 md:mb-0 h-full justify-center">
+                    <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-xl font-bold mb-6">
+                      {opportunity.host.name.charAt(0)}
+                    </div>
+                    <h3 className="font-semibold text-xl">{opportunity.host.name}</h3>
+                  </div>
+
+                  {/* Stats */}
+                  <div className="w-full h-full md:w-1/2 md:pl-4 flex flex-col justify-center text-center">
+                    <div className="border-b border-gray-200 pb-2 mb-2">
+                      <p className="text-xl text-darkgreenx font-semibold">{opportunity.host.totalReviews} <span className="text-sm font-normal"><br></br> reviews</span></p>
+                    </div>
+                    <div className="border-b border-gray-200 pb-2 mb-2">
+                      <p className="text-xl text-darkgreenx font-semibold">{opportunity.host.rating}<span className="text-sm font-normal"><br></br>rating</span></p>
+                    </div>
+                    <div>
+                      <p className="text-xl text-darkgreenx font-semibold">{opportunity.host.yearsHosting}<span className="text-sm font-normal"><br></br>years hosting</span></p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-xl">{opportunity.host.name}</h3>
-                  <p className="text-gray-600">{opportunity.host.totalReviews} reviews | {opportunity.host.rating} / 5 rating</p>
-                  <p className="text-gray-600">{opportunity.host.yearsHosting} years hosting</p>
+
+                {/* Hosts About Section */}
+                <div className="w-full md:w-2/3 flex items-center pl-8">
+                  <div className="space-y-4">
+                    {opportunity.host.about.split('\n\n').map((paragraph, idx) => (
+                      <p key={idx} className="text-gray-700">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
                 </div>
+
               </div>
-              <p className="text-gray-700">{opportunity.host.about}</p>
             </div>
           </div>
+
         </div>
       </div>
       {/* Footerx */}
