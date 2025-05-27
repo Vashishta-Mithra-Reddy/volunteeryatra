@@ -16,7 +16,7 @@ export default async function OpportunityDetailPage({
   }
 
   return (
-    <div className="container mx-auto pb-52 md:pb-28">
+    <div className="container mx-auto pb-20 md:pb-28">
       {/* Headerx*/}
       <div className="flex items-center justify-between mb-6 border-b-2 border-gray-200 px-4 sm:px-8 md:px-16 py-5">
         <Link href="/opportunities" className="flex items-center text-gray-600 hover:text-yellow-500">
@@ -65,6 +65,49 @@ export default async function OpportunityDetailPage({
               </div>
             );
           })}
+        </div>
+      </div>
+
+      {/* Mobile Location Info - Only visible on mobile */}
+      <div className="lg:hidden px-6 pt-2 sm:px-8 md:px-16 mb-6">
+        <div className="flex flex-col space-y-4">
+          <div className="flex items-center justify-around">
+            <span className="flex items-center text-gray-700">
+              {(() => {
+                let StayIcon;
+                let bgColorClass;
+                switch (opportunity.typeOfStay.toLowerCase()) {
+                  case 'homestay':
+                    StayIcon = Home;
+                    bgColorClass = 'bg-blue-100 text-blue-800';
+                    break;
+                  case 'hotel':
+                    StayIcon = Hotel;
+                    bgColorClass = 'bg-green-100 text-green-800';
+                    break;
+                  case 'hostel':
+                    StayIcon = Bed;
+                    bgColorClass = 'bg-purple-100 text-purple-800';
+                    break;
+                  default:
+                    StayIcon = null;
+                    bgColorClass = 'bg-gray-100 text-gray-800';
+                }
+                return (
+                  <span className={`flex items-center px-3 py-2 rounded-full text-base font-semibold ${bgColorClass}`}>
+                    {StayIcon && <StayIcon className="w-4 h-4 mr-2" />}
+                    {opportunity.typeOfStay}
+                  </span>
+                );  
+              })()}
+            </span>
+            <span className="flex items-center text-green-800 text-base font-semibold bg-green-100 px-3 py-2 rounded-full">
+              <MapPin className="w-5 h-5 mr-1" /> {opportunity.location}
+            </span>
+          </div>
+          <span className="text-gray-700 text-base font-semibold flex w-full items-center justify-center py-2 rounded-full">
+            <Users className="w-5 h-5 mr-1" />{opportunity.maxVolunteers} People Can Volunteer Together
+          </span>
         </div>
       </div>
 
@@ -250,7 +293,7 @@ export default async function OpportunityDetailPage({
       {/* Footerx */}
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-4 sm:py-6 px-4 sm:px-20 shadow-lg">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
-        <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-12">
+        <div className="hidden md:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-12">
           <span className="flex items-center text-gray-700 text-base sm:text-lg font-semibold">
             <MapPin className="w-5 h-5 sm:w-6 sm:h-6 mr-1" /> {opportunity.location}
           </span>
