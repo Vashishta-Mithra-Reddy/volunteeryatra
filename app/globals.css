@@ -12,15 +12,22 @@
   --font-mono: var(--font-geist-mono);
 }
 
+@theme {
+  --font-poppins: var(--font-poppins);
+
+  --color-yellowx: oklch(0.9132 0.1014 98.9);
+  --color-darkgreenx: oklch(0.3437 0.0505 209.15);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
