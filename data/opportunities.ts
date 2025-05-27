@@ -123,7 +123,7 @@ export const opportunities = [
     },
     {
       id: "opp3",
-      name: "Himalayan Homestay Support",
+      name: "Himalayan Homestay",
       location: "Manali, Himachal Pradesh",
       typeOfStay: "Homestay",
       maxVolunteers: 1,
@@ -183,7 +183,7 @@ export const opportunities = [
     },
     {
       id: "opp4",
-      name: "Himalayan Homestay Support",
+      name: "Himalayan Homestay",
       location: "Manali, Himachal Pradesh",
       typeOfStay: "Hotel",
       maxVolunteers: 1,
