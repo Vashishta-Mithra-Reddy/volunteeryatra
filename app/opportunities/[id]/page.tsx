@@ -17,7 +17,7 @@ export default async function OpportunityDetailPage({
 
   return (
     <div className="container mx-auto pb-28">
-      {/* Header with Back, Title, Share, and Heart */}
+      {/* Headerx*/}
       <div className="flex items-center justify-between mb-6 border-b-2 border-gray-200 px-16 py-5">
         <Link href="/opportunities" className="flex items-center text-gray-600 hover:text-yellow-500">
           <ArrowLeft className="w-7 h-7 mr-1" />
@@ -33,9 +33,8 @@ export default async function OpportunityDetailPage({
         </div>
       </div>
 
-      {/* Images Section */}
+      {/* Imagesx */}
       <div className="flex flex-col lg:flex-row gap-4 mb-8 px-4 lg:px-16">
-        {/* Left: Main Image */}
         <div className="w-full lg:w-1/2 h-[400px] relative overflow-hidden shadow-md rounded-l-3xl">
           <Image
             src={opportunity.images[0]}
@@ -46,10 +45,8 @@ export default async function OpportunityDetailPage({
           />
         </div>
 
-        {/* Right: Grid of 4 Images + Show More Overlay */}
         <div className="w-full lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-4">
           {opportunity.images.slice(1, 5).map((image, index) => {
-            // Conditional rounding
             const roundingClass =
               index === 1 ? 'rounded-tr-3xl' : index === 3 ? 'rounded-br-3xl' : '';
 
@@ -81,7 +78,7 @@ export default async function OpportunityDetailPage({
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-16">
         <div className="lg:col-span-2">
-          {/* Duration */}
+          {/* Durationx */}
           <div className="flex items-center gap-8 mb-6">
             <div>
               <h2 className="text-2xl font-semibold mb-4">Stay at least</h2>
@@ -97,7 +94,7 @@ export default async function OpportunityDetailPage({
             </div>
           </div>
 
-          {/* Skills Required */}
+          {/* Skillsx */}
           <h2 className="text-2xl font-semibold mb-4 mt-6">Skills Required</h2>
           <div className="flex flex-wrap gap-2 mb-6">
             {opportunity.skillsRequired.map((skill, index) => (
@@ -110,71 +107,71 @@ export default async function OpportunityDetailPage({
             ))}
           </div>
 
-          {/* Description */}
+          {/* Descriptionx */}
           <h2 className="text-2xl font-semibold mb-4">Description</h2>
           <p className="text-gray-700 mb-6">{opportunity.description}</p>
 
-{/* What You Offer */}
-<h2 className="text-2xl font-semibold mb-6">What You Offer</h2>
-<div className="grid grid-cols-2 sm:grid-cols-6 gap-6 mb-10">
-  <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-    <Clock className="w-12 h-12 text-blue-600 mb-3" />
-    <span className="font-semibold text-lg text-gray-800">Time per day</span>
-    <span className="text-gray-600">{opportunity.whatYouOffer.hoursPerDay} hours</span>
-  </div>
+          {/* What You Offerx */}
+          <h2 className="text-2xl font-semibold mb-6">What You Offer</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-6 gap-6 mb-10">
+            <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+              <Clock className="w-12 h-12 text-blue-600 mb-3" />
+              <span className="font-semibold text-lg text-gray-800">Time per day</span>
+              <span className="text-gray-600">{opportunity.whatYouOffer.hoursPerDay} hours</span>
+            </div>
 
-  <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-    <Calendar className="w-12 h-12 text-blue-600 mb-3" />
-    <span className="font-semibold text-lg text-gray-800">Days per week</span>
-    <span className="text-gray-600">{opportunity.whatYouOffer.daysPerWeek} days</span>
-  </div>
-</div>
+            <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+              <Calendar className="w-12 h-12 text-blue-600 mb-3" />
+              <span className="font-semibold text-lg text-gray-800">Days per week</span>
+              <span className="text-gray-600">{opportunity.whatYouOffer.daysPerWeek} days</span>
+            </div>
+          </div>
 
-{/* What You Get */}
-<h2 className="text-2xl font-semibold mb-6">What You Get</h2>
-<div className="grid grid-cols-2 sm:grid-cols-6 gap-6">
-  <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-    <Bed className="w-12 h-12 text-green-600 mb-3" />
-    <span className="font-semibold text-lg text-gray-800">Room Type</span>
-    <span className="text-gray-600">{opportunity.whatYouGet.roomType}</span>
-  </div>
+          {/* What You Getx */}
+          <h2 className="text-2xl font-semibold mb-6">What You Get</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-6 gap-6">
+            <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+              <Bed className="w-12 h-12 text-green-600 mb-3" />
+              <span className="font-semibold text-lg text-gray-800">Room Type</span>
+              <span className="text-gray-600">{opportunity.whatYouGet.roomType}</span>
+            </div>
 
-  <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-    <Utensils className="w-12 h-12 text-green-600 mb-3" />
-    <span className="font-semibold text-lg text-gray-800">Meals</span>
-    <span className="text-gray-600">{opportunity.whatYouGet.meals}</span>
-  </div>
+            <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+              <Utensils className="w-12 h-12 text-green-600 mb-3" />
+              <span className="font-semibold text-lg text-gray-800">Meals</span>
+              <span className="text-gray-600">{opportunity.whatYouGet.meals}</span>
+            </div>
 
-  {opportunity.whatYouGet.transport && (
-    <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-      <Bus className="w-12 h-12 text-green-600 mb-3" />
-      <span className="font-semibold text-lg text-gray-800">Transport</span>
-      <span className="text-gray-600">{opportunity.whatYouGet.transport}</span>
-    </div>
-  )}
+            {opportunity.whatYouGet.transport && (
+              <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+                <Bus className="w-12 h-12 text-green-600 mb-3" />
+                <span className="font-semibold text-lg text-gray-800">Transport</span>
+                <span className="text-gray-600">{opportunity.whatYouGet.transport}</span>
+              </div>
+            )}
 
-  {opportunity.whatYouGet.extras?.map((extra, index) => (
-    <div key={index} className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-      <Gift className="w-12 h-12 text-green-600 mb-3" />
-      <span className="font-semibold text-lg text-gray-800">Extra</span>
-      <span className="text-gray-600">{extra}</span>
-    </div>
-  ))}
+            {opportunity.whatYouGet.extras?.map((extra, index) => (
+              <div key={index} className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+                <Gift className="w-12 h-12 text-green-600 mb-3" />
+                <span className="font-semibold text-lg text-gray-800">Extra</span>
+                <span className="text-gray-600">{extra}</span>
+              </div>
+            ))}
 
-  <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
-    <Coffee className="w-12 h-12 text-green-600 mb-3" />
-    <span className="font-semibold text-lg text-gray-800">Days Off</span>
-    <span className="text-gray-600">{opportunity.whatYouGet.daysOff} per week</span>
-  </div>
-</div>          
+            <div className="flex flex-col items-center bg-white border-gray-200 border-2 rounded-xl p-6">
+              <Coffee className="w-12 h-12 text-green-600 mb-3" />
+              <span className="font-semibold text-lg text-gray-800">Days Off</span>
+              <span className="text-gray-600">{opportunity.whatYouGet.daysOff} per week</span>
+            </div>
+          </div>          
 
-          {/* About the Experience */}
+          {/* About the Experiencex */}
           <h2 className="text-2xl font-semibold mb-4 mt-8">About the Experience</h2>
           <p className="text-gray-700 mb-6">{opportunity.aboutExperience}</p>
 
           
           <hr className="border-2 border-gray-200 my-8"></hr>
-          {/* Rating Section */}
+          {/* Rating Sectionx */}
           {/* <h2 className="text-2xl font-semibold mb-4">Reviews ({opportunity.host.totalReviews})</h2> */}
           <h2 className="text-2xl font-semibold mb-4">Reviews</h2>
           <div className="mb-6">
@@ -210,7 +207,7 @@ export default async function OpportunityDetailPage({
           <hr className="border-2 border-gray-200 mb-4 mt-12"></hr>
           
 
-          {/* Host Data Section (Moved to bottom) */}
+          {/* Hostx*/}
           <div className="w-full">
             <div className="bg-white p-6 rounded-lg">
               <h2 className="text-2xl font-semibold mb-6">Meet Your Host</h2>
@@ -229,7 +226,7 @@ export default async function OpportunityDetailPage({
           </div>
         </div>
       </div>
-      {/* Sticky Footer */}
+      {/* Footerx */}
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-6 px-20 shadow-lg">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-12">
