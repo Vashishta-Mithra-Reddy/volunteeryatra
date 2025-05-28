@@ -1,10 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Star } from "lucide-react";
 
 export default function Reviews({ ratings }: { ratings: any[] }) {
   const [showAll, setShowAll] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 640) {
+      setShowAll(true);
+    }
+  }, []);
 
   const averageRating = ratings?.length
     ? (ratings.reduce((sum, r) => sum + r.rating, 0) / ratings.length).toFixed(1)
@@ -15,8 +21,8 @@ export default function Reviews({ ratings }: { ratings: any[] }) {
   return (
     <div className="mt-10">
       {averageRating ? (
-        <div className="flex justify-center mb-8">
-          <div className="px-6 py-4 rounded-xl border-2 border-gray-200 flex items-center gap-3">
+        <div className="flex justify-start md:justify-center mb-8">
+          <div className="px-6 py-4 rounded-xl border-0 md:border-2 md:border-gray-200 flex items-center gap-3">
             <Star className="fill-yellow-500 stroke-yellow-500" />
             <span className="text-xl font-bold">{averageRating} / 5</span>
             <span className="text-gray-600">({ratings.length} reviews)</span>
@@ -34,7 +40,7 @@ export default function Reviews({ ratings }: { ratings: any[] }) {
               showAll
                 ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
                 : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-            } max-sm:flex max-sm:overflow-x-auto max-sm:snap-x max-sm:space-x-4 pb-4`}
+            } max-sm:flex max-sm:overflow-x-auto max-sm:snap-x max-sm:space-x-4 pb-4 px-2`}
           >
             {displayedRatings.map((rating, index) => (
               <div
@@ -78,7 +84,7 @@ export default function Reviews({ ratings }: { ratings: any[] }) {
           </div>
 
           {!showAll && ratings.length > 6 && (
-            <div className="flex justify-center mt-6">
+            <div className="justify-center mt-6 sm:flex hidden">
               <button
                 onClick={() => setShowAll(true)}
                 className="font-medium px-6 py-4 rounded-xl border-2 border-gray-200 hover:text-darkgreenx cursor-pointer hover:bg-darkgreenx/10 transition-colors duration-300 "

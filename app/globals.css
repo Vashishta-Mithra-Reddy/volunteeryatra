@@ -46,6 +46,7 @@
 @theme {
   --font-poppins: var(--font-poppins);
 
+  --color-violetx: #747DEF;
   --color-yellowx: oklch(0.9132 0.1014 98.9);
   --color-darkgreenx: oklch(0.3437 0.0505 209.15);
 }

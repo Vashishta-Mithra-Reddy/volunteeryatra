@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reviews from "@/components/Reviews";
 import { Share2, Heart, ArrowLeft, MapPin, Home, Hotel, User, Users, Clock, Calendar, Bed, Utensils, Bus, Gift, Coffee } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 
 export default async function OpportunityDetailPage({
   params,
@@ -19,7 +20,7 @@ export default async function OpportunityDetailPage({
   return (
     <div className="container mx-auto pb-20 md:pb-28">
       {/* Headerx*/}
-      <div className="flex items-center justify-between mb-6 border-b-2 border-gray-200 px-4 sm:px-8 md:px-16 py-5">
+      <div className="flex items-center justify-between mb-0 md:mb-6 border-b-2 border-gray-200 px-4 sm:px-8 md:px-16 py-5">
         <Link href="/opportunities" className="flex items-center text-gray-600 hover:text-yellow-500">
           <ArrowLeft className="w-6 h-6 sm:w-7 sm:h-7 mr-1" />
         </Link>
@@ -35,7 +36,7 @@ export default async function OpportunityDetailPage({
       </div>
 
       {/* Imagesx */}
-      <div className="flex flex-col lg:flex-row gap-4 mb-8 px-4 sm:px-8 md:px-16">
+      <div className="hidden md:flex flex-col lg:flex-row gap-4 mb-8 px-4 sm:px-8 md:px-16">
         <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] relative overflow-hidden shadow-md rounded-lg lg:rounded-l-3xl lg:rounded-r-none">
           <Image
             src={opportunity.images[0]}
@@ -69,6 +70,42 @@ export default async function OpportunityDetailPage({
         </div>
       </div>
 
+      {/* Carousel for smaller screens */}
+      <div className="relative sm:hidden w-full mb-4 h-64">
+          <Carousel
+            className="w-full h-full"
+          >
+            <CarouselContent>
+              {opportunity.images.map((imgSrc, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative w-full h-64">
+                    <Image
+                      src={imgSrc}
+                      alt={`Image ${index + 1}`}
+                      fill
+                      className="object-cover"
+                      sizes="100vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          {/* Dots */}
+          {/* <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === selectedIndex ? "bg-white" : "bg-gray-300"
+                }`}
+              />
+            ))} */}
+          </div>
+
+      <div>
       {/* Mobile Location Info - Only visible on mobile */}
       <div className="lg:hidden px-6 pt-2 sm:px-8 md:px-16 mb-6">
         <div className="flex flex-col space-y-4">
@@ -112,17 +149,17 @@ export default async function OpportunityDetailPage({
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 sm:px-8 md:px-16">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-8 sm:px-8 md:px-16">
         <div className="lg:col-span-2">
           {/* Durationx */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-8 mb-6">
-            <div className="w-full sm:w-auto">
+          <div className="flex flex-row items-start justify-between sm:justify-normal sm:items-center gap-4 sm:gap-8 mb-6">
+            <div className="w-auto">
               <h2 className="text-xl sm:text-2xl font-semibold mb-2">Stay at least</h2>
               <span className="bg-yellowx text-darkgreenx text-lg font-medium px-8 sm:px-12 py-2 rounded-sm text-custom-dark-green inline-block w-full sm:w-auto text-center">
                 {opportunity.minDurationWeeks} Weeks
               </span>
             </div>
-            <div className="w-full sm:w-auto">
+            <div className="w-auto">
               <h2 className="text-xl sm:text-2xl font-semibold mb-2">Stay up to</h2>
               <span className="bg-yellowx text-darkgreenx text-lg font-medium px-8 sm:px-12 py-2 rounded-sm text-custom-dark-green inline-block w-full sm:w-auto text-center">
                 {opportunity.maxDurationWeeks} Weeks
@@ -260,6 +297,7 @@ export default async function OpportunityDetailPage({
           </div>
 
         </div>
+      </div>
       </div>
       {/* Footerx */}
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 py-4 sm:py-6 px-4 sm:px-20 shadow-lg">

@@ -25,8 +25,8 @@ export default function OpportunitiesPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-100">
-      <div className="w-full px-12 md:px-20 py-8 pb-24 md:pb-8">
+    <div className="min-h-screen">
+      <div className="w-full px-6 md:px-24 py-8 pb-24 md:pb-8">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
           {/* Mobile view: Simple search bar */}
@@ -43,7 +43,7 @@ export default function OpportunitiesPage() {
             {/* Where to (location) */}
             <Input
               type="text"
-              placeholder="Where to? (Location)"
+              placeholder="Where to?"
               className="flex-1 shadow-none focus-visible:ring-0 border-0 border-r-1 rounded-none border-gray-200"
             />
 
@@ -104,7 +104,7 @@ export default function OpportunitiesPage() {
 
         {/* <h1 className="text-4xl font-bold text-gray-800 mb-8">Explore Opportunities</h1> */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {opportunities.map((opportunity) => (
             <OpportunityCard key={opportunity.id} opportunity={opportunity} />
           ))}

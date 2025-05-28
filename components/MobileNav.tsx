@@ -31,10 +31,6 @@ export default function MobileNav() {
     },
   ];
 
-  if (pathname !== "/opportunities") {
-    return null; // Only show on the /opportunities page
-  }
-
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-2 md:hidden z-50">
       <nav className="flex justify-around items-center h-full">

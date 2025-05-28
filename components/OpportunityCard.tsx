@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, MapPin } from "lucide-react";
+import { Heart, MapPin, Sparkle, Sparkles, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import {
@@ -98,19 +98,22 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
           </button>
 
           {/* New Tag */}
-          <div className="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-sm z-10">
-            New
+          <div className="absolute top-4 left-0 bg-violetx text-white text-xs font-semibold px-3 py-1.5 rounded-sm rounded-l-none z-10">
+            <span className="flex">
+            <Star className="h-4 w-4 mr-1 fill-white"/>
+            NEW
+            </span>
           </div>
         </div>
 
         <div className="p-4">
           <p className="text-gray-600 text-sm mb-2 mt-1 flex items-center gap-1">
-            <MapPin className="w-4 h-4 text-green-500" />
+            <MapPin className="w-4 h-4 text-blue-800" />
             {opportunity.location}
           </p>
 
           <h3 className="font-semibold text-xl mb-4 text-gray-800">
-            Volunteer in {opportunity.location.split(",")[0]} as {opportunity.mainRole}
+            <span className="font-medium text-gray-500">Volunteer in {opportunity.location.split(",")[0]} as</span> {opportunity.mainRole}
           </h3>
 
           <div className="flex flex-wrap gap-2 mb-3 line-clamp-1">
