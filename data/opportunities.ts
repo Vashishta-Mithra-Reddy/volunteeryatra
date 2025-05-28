@@ -46,7 +46,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -56,7 +55,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         },
@@ -66,7 +64,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -76,7 +73,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         },
@@ -86,7 +82,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -96,7 +91,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         },
@@ -106,7 +100,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -116,7 +109,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         }
@@ -167,8 +159,7 @@ export const opportunities = [
           review: "Amazing vibe and great people. Perfect for short volunteering.",
           profile: {
             name: "Carlos R.",
-            country: "Mexico",
-            profilePic: "/profiles/carlos.jpg"
+            profilePic: ""
           }
         },
         {
@@ -177,8 +168,7 @@ export const opportunities = [
           review: "Hostel work was light and the beach is just 2 minutes away!",
           profile: {
             name: "Sana A.",
-            country: "India",
-            profilePic: "/profiles/sana.jpg"
+            profilePic: ""
           }
         }
       ]
@@ -228,8 +218,7 @@ export const opportunities = [
           review: "Most peaceful time of my life. Tashi is kind and knowledgeable.",
           profile: {
             name: "Julia K.",
-            country: "Germany",
-            profilePic: "/profiles/julia.jpg"
+            profilePic: ""
           }
         },
         {
@@ -238,8 +227,7 @@ export const opportunities = [
           review: "Beautiful mountains, great food, and fulfilling work.",
           profile: {
             name: "Arjun D.",
-            country: "India",
-            profilePic: "/profiles/arjun.jpg"
+            profilePic: ""
           }
         }
       ]
@@ -289,8 +277,7 @@ export const opportunities = [
           review: "Most peaceful time of my life. Tashi is kind and knowledgeable.",
           profile: {
             name: "Julia K.",
-            country: "Germany",
-            profilePic: "/profiles/julia.jpg"
+            profilePic: ""
           }
         },
         {
@@ -299,7 +286,6 @@ export const opportunities = [
           review: "Beautiful mountains, great food, and fulfilling work.",
           profile: {
             name: "Arjun D.",
-            country: "India",
             profilePic: ""
           }
         }
@@ -350,7 +336,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -360,7 +345,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         },
@@ -370,7 +354,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -380,7 +363,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         },
@@ -390,7 +372,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -400,7 +381,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         },
@@ -410,7 +390,6 @@ export const opportunities = [
           review: "A serene and eye-opening experience. Ramesh is an amazing host!",
           profile: {
             name: "Elena M.",
-            country: "Spain",
             profilePic: ""
           }
         },
@@ -420,7 +399,6 @@ export const opportunities = [
           review: "Loved the nature and food. Could improve room facilities a bit.",
           profile: {
             name: "Liam P.",
-            country: "UK",
             profilePic: ""
           }
         }
@@ -443,7 +421,7 @@ export const opportunities = [
       ],
       minDurationWeeks: 1,
       maxDurationWeeks: 4,
-      skillsRequired: ["Communication", "Reception","People Skills"],
+      skillsRequired: ["Communication", "Reception","People Skills","Management"],
       whatYouOffer: {
         hoursPerDay: 4,
         daysPerWeek: 6
@@ -471,8 +449,7 @@ export const opportunities = [
           review: "Amazing vibe and great people. Perfect for short volunteering.",
           profile: {
             name: "Carlos R.",
-            country: "Mexico",
-            profilePic: "/profiles/carlos.jpg"
+            profilePic: ""
           }
         },
         {
@@ -481,8 +458,7 @@ export const opportunities = [
           review: "Hostel work was light and the beach is just 2 minutes away!",
           profile: {
             name: "Sana A.",
-            country: "India",
-            profilePic: "/profiles/sana.jpg"
+            profilePic: ""
           }
         }
       ]
@@ -532,8 +508,7 @@ export const opportunities = [
           review: "Most peaceful time of my life. Tashi is kind and knowledgeable.",
           profile: {
             name: "Julia K.",
-            country: "Germany",
-            profilePic: "/profiles/julia.jpg"
+            profilePic: ""
           }
         },
         {
@@ -542,8 +517,7 @@ export const opportunities = [
           review: "Beautiful mountains, great food, and fulfilling work.",
           profile: {
             name: "Arjun D.",
-            country: "India",
-            profilePic: "/profiles/arjun.jpg"
+            profilePic: ""
           }
         }
       ]
@@ -593,8 +567,7 @@ export const opportunities = [
           review: "Most peaceful time of my life. Tashi is kind and knowledgeable.",
           profile: {
             name: "Julia K.",
-            country: "Germany",
-            profilePic: "/profiles/julia.jpg"
+            profilePic: ""
           }
         },
         {
@@ -603,7 +576,6 @@ export const opportunities = [
           review: "Beautiful mountains, great food, and fulfilling work.",
           profile: {
             name: "Arjun D.",
-            country: "India",
             profilePic: ""
           }
         }
