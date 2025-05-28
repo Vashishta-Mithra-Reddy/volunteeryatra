@@ -24,7 +24,7 @@ export default async function OpportunityDetailPage({
         <Link href="/opportunities" className="flex items-center text-gray-600 hover:text-yellow-500">
           <ArrowLeft className="w-6 h-6 sm:w-7 sm:h-7 mr-1" />
         </Link>
-        <h1 className="text-xl sm:text-2xl font-semibold ml-3 text-left flex-grow">Volunteer in {opportunity.location.split(",")[0]}</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold ml-3 text-left flex-grow text-[#224D54]">Volunteer in {opportunity.location.split(",")[0]}</h1>
         <div className="flex items-center space-x-4">
           <button className="text-gray-600 hover:text-green-600 cursor-pointer">
             <Share2 className="w-6 h-6 sm:w-7 sm:h-7" />
