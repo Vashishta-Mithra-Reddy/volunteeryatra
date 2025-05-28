@@ -37,8 +37,8 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
           />
 
           {/* Heart Button */}
-          <button className="absolute top-2 right-2 p-2 rounded-full z-20 cursor-pointer">
-            <Heart className="text-white hover:text-red-500 w-6 h-6 hover:fill-red-500" />
+          <button className="absolute top-2 right-2 p-2 rounded-full z-20 cursor-pointer transition-colors duration-300">
+            <Heart className="text-white hover:text-red-500 w-6 h-6 hover:fill-red-500 transition-colors duration-200" />
           </button>
 
           {/* New Tag */}

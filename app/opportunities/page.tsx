@@ -2,33 +2,44 @@
 
 import { opportunities } from "@/data/opportunities";
 import OpportunityCard from "@/components/OpportunityCard";
-import { Input } from "@/components/ui/input"; // Assuming shadcn input
-import { CalendarIcon, SearchIcon } from "lucide-react"; // Assuming lucide-react for icons
+import { Input } from "@/components/ui/input"; 
+import { CalendarIcon, SearchIcon } from "lucide-react"; 
 import React from "react";
-import { addDays, format } from "date-fns"
-import { DateRange } from "react-day-picker"
+import { addDays, format } from "date-fns";
+import { DateRange } from "react-day-picker";
 
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from "@/components/ui/popover";
 import MobileNav from "@/components/MobileNav";
 
 export default function OpportunitiesPage() {
   const [date, setDate] = React.useState<DateRange | undefined>({
     from: new Date(2025, 5, 20),
     to: addDays(new Date(2025, 5, 20), 20),
-  })
+  });
+
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="w-full px-12 md:px-20 py-8 pb-24 md:pb-8">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
-          <div className="w-2/3 flex items-center border border-gray-300 rounded-full shadow-sm bg-white px-3 py-3 space-x-2">
+          {/* Mobile view: Simple search bar */}
+          <div className="w-full md:hidden">
+            <Input
+              type="text"
+              placeholder="Start your search"
+              className="w-full rounded-full  font-semibold px-6 py-8 shadow-sm text-lg bg-white text-center text-darkgreenx"
+            />
+          </div>
+
+          {/* Desktop view: Detailed search bar */}
+          <div className="w-2/3 hidden md:flex items-center border border-gray-300 rounded-full shadow-sm bg-white px-3 py-3 space-x-2">
             {/* Where to (location) */}
             <Input
               type="text"
@@ -82,14 +93,16 @@ export default function OpportunitiesPage() {
             </Popover>
 
             {/* Search Button */}
-            <Button type="submit" className="bg-darkgreenx cursor-pointer hover:bg-green-700 rounded-full">
+            <Button
+              type="submit"
+              className="bg-darkgreenx cursor-pointer hover:bg-green-700 rounded-full"
+            >
               <SearchIcon className="h-6 w-6 text-white" />
             </Button>
           </div>
         </div>
 
         {/* <h1 className="text-4xl font-bold text-gray-800 mb-8">Explore Opportunities</h1> */}
-
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {opportunities.map((opportunity) => (
