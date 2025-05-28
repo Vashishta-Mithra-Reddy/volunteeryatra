@@ -16,6 +16,10 @@ interface OpportunityCardProps {
     whatYouGet?: {
       roomType?: string;
     };
+    whatYouOffer: {
+      hoursPerDay: number;
+      daysPerWeek: number;
+    };
   };
 }
 
@@ -33,8 +37,8 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
           />
 
           {/* Heart Button */}
-          <button className="absolute top-2 right-2 bg-white/80 hover:bg-white p-2 rounded-full z-10">
-            <Heart className="text-red-500 w-4 h-4 fill-red-500" />
+          <button className="absolute top-2 right-2 p-2 rounded-full z-20 cursor-pointer">
+            <Heart className="text-white hover:text-red-500 w-6 h-6 hover:fill-red-500" />
           </button>
 
           {/* New Tag */}
@@ -71,7 +75,11 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
           
           {/* Additional Info */}
           <p className="text-gray-500 text-sm mb-2">
-            {opportunity.minDurationWeeks && `At least ${opportunity.minDurationWeeks} weeks`} •{" "}
+            {opportunity.whatYouOffer?.hoursPerDay * opportunity.whatYouOffer?.daysPerWeek}h/Week •{" "}
+            {opportunity.minDurationWeeks && `At least ${opportunity.minDurationWeeks} weeks`}
+          </p>
+          
+          <p className="text-gray-500 text-sm mb-2">
             {opportunity.whatYouGet?.roomType}
           </p>
 

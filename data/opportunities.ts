@@ -145,7 +145,7 @@ export const opportunities = [
         daysPerWeek: 6
       },
       whatYouGet: {
-        roomType: "Mixed Dorm",
+        roomType: "Mixed Dormitory",
         meals: "Breakfast Only",
         transport: "None",
         extras: ["Free Yoga Classes", "Internet Access"],

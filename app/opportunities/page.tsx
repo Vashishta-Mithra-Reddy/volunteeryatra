@@ -16,6 +16,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
+import MobileNav from "@/components/MobileNav";
 
 export default function OpportunitiesPage() {
   const [date, setDate] = React.useState<DateRange | undefined>({
@@ -24,7 +25,7 @@ export default function OpportunitiesPage() {
   })
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="w-full px-12 md:px-20 py-8">
+      <div className="w-full px-12 md:px-20 py-8 pb-24 md:pb-8">
         {/* Search Bar */}
         <div className="flex justify-center mb-8">
           <div className="w-2/3 flex items-center border border-gray-300 rounded-full shadow-sm bg-white px-3 py-3 space-x-2">
@@ -96,6 +97,7 @@ export default function OpportunitiesPage() {
           ))}
         </div>
       </div>
+      <MobileNav />
     </div>
   );
 }
