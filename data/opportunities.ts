@@ -5,6 +5,7 @@ export const opportunities = [
       id: "opp1",
       name: "Eco Farm Retreat",
       location: "Coorg, Karnataka",
+      mainRole: "A Social Media Manager",
       typeOfStay: "Homestay",
       maxVolunteers: 4,
       images: [
@@ -17,7 +18,7 @@ export const opportunities = [
       ],
       minDurationWeeks: 2,
       maxDurationWeeks: 8,
-      skillsRequired: ["Organic Farming", "Cooking", "Management"],
+      skillsRequired: ["Social Media Managment", "SEO", "Management"],
       whatYouOffer: {
         hoursPerDay: 5,
         daysPerWeek: 5
@@ -46,7 +47,7 @@ export const opportunities = [
           profile: {
             name: "Elena M.",
             country: "Spain",
-            profilePic: "/profiles/elena.jpg"
+            profilePic: ""
           }
         },
         {
@@ -56,7 +57,67 @@ export const opportunities = [
           profile: {
             name: "Liam P.",
             country: "UK",
-            profilePic: "/profiles/liam.jpg"
+            profilePic: ""
+          }
+        },
+        {
+          rating: 5,
+          date: "2024-12-10",
+          review: "A serene and eye-opening experience. Ramesh is an amazing host!",
+          profile: {
+            name: "Elena M.",
+            country: "Spain",
+            profilePic: ""
+          }
+        },
+        {
+          rating: 4.5,
+          date: "2024-11-05",
+          review: "Loved the nature and food. Could improve room facilities a bit.",
+          profile: {
+            name: "Liam P.",
+            country: "UK",
+            profilePic: ""
+          }
+        },
+        {
+          rating: 5,
+          date: "2024-12-10",
+          review: "A serene and eye-opening experience. Ramesh is an amazing host!",
+          profile: {
+            name: "Elena M.",
+            country: "Spain",
+            profilePic: ""
+          }
+        },
+        {
+          rating: 4.5,
+          date: "2024-11-05",
+          review: "Loved the nature and food. Could improve room facilities a bit.",
+          profile: {
+            name: "Liam P.",
+            country: "UK",
+            profilePic: ""
+          }
+        },
+        {
+          rating: 5,
+          date: "2024-12-10",
+          review: "A serene and eye-opening experience. Ramesh is an amazing host!",
+          profile: {
+            name: "Elena M.",
+            country: "Spain",
+            profilePic: ""
+          }
+        },
+        {
+          rating: 4.5,
+          date: "2024-11-05",
+          review: "Loved the nature and food. Could improve room facilities a bit.",
+          profile: {
+            name: "Liam P.",
+            country: "UK",
+            profilePic: ""
           }
         }
       ]
@@ -65,6 +126,7 @@ export const opportunities = [
       id: "opp2",
       name: "Beach Hostel Helper",
       location: "Gokarna, Karnataka",
+      mainRole: "A Content Writer",
       typeOfStay: "Hostel",
       maxVolunteers: 2,
       images: [
@@ -77,7 +139,7 @@ export const opportunities = [
       ],
       minDurationWeeks: 1,
       maxDurationWeeks: 4,
-      skillsRequired: ["Communication", "Reception", "Cleaning"],
+      skillsRequired: ["Communication", "Reception","People Skills"],
       whatYouOffer: {
         hoursPerDay: 4,
         daysPerWeek: 6
@@ -124,7 +186,8 @@ export const opportunities = [
     {
       id: "opp3",
       name: "Himalayan Homestay",
-      location: "Manali, Himachal Pradesh",
+      location: "Manali, Himachal",
+      mainRole : "A Teacher",
       typeOfStay: "Homestay",
       maxVolunteers: 1,
       images: [
@@ -184,7 +247,8 @@ export const opportunities = [
     {
       id: "opp4",
       name: "Himalayan Homestay",
-      location: "Manali, Himachal Pradesh",
+      location: "Manali, Himachal",
+      mainRole : "A Web Developer",
       typeOfStay: "Hotel",
       maxVolunteers: 1,
       images: [
@@ -237,7 +301,7 @@ export const opportunities = [
           profile: {
             name: "Arjun D.",
             country: "India",
-            profilePic: "/profiles/arjun.jpg"
+            profilePic: ""
           }
         }
       ]

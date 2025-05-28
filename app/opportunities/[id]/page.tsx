@@ -1,6 +1,7 @@
 import { opportunities } from "@/data/opportunities";
 import Image from "next/image";
 import Link from "next/link";
+import Reviews from "@/components/Reviews";
 import { Share2, Heart, ArrowLeft, MapPin, Home, Hotel, User, Users, Clock, Calendar, Bed, Utensils, Bus, Gift, Coffee } from "lucide-react";
 
 export default async function OpportunityDetailPage({
@@ -22,7 +23,7 @@ export default async function OpportunityDetailPage({
         <Link href="/opportunities" className="flex items-center text-gray-600 hover:text-yellow-500">
           <ArrowLeft className="w-6 h-6 sm:w-7 sm:h-7 mr-1" />
         </Link>
-        <h1 className="text-xl sm:text-2xl font-semibold ml-3 text-left flex-grow">{opportunity.name}</h1>
+        <h1 className="text-xl sm:text-2xl font-semibold ml-3 text-left flex-grow">Volunteer in {opportunity.location.split(",")[0]}</h1>
         <div className="flex items-center space-x-4">
           <button className="text-gray-600 hover:text-green-600 cursor-pointer">
             <Share2 className="w-6 h-6 sm:w-7 sm:h-7" />
@@ -206,39 +207,9 @@ export default async function OpportunityDetailPage({
 
           
           <hr className="border-2 border-gray-200 my-8"></hr>
-          {/* Rating Sectionx */}
+          {/* Ratingx}
           {/* <h2 className="text-2xl font-semibold mb-4">Reviews ({opportunity.host.totalReviews})</h2> */}
-          <h2 className="text-xl sm:text-2xl font-semibold mb-4">Reviews</h2>
-          <div className="mb-6">
-            {opportunity.ratings && opportunity.ratings.length > 0 ? (
-              opportunity.ratings.map((rating, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg mb-4 shadow-sm">
-                  <div className="flex items-center mb-2">
-                    {rating.profile.profilePic && (
-                      <Image
-                        src={rating.profile.profilePic}
-                        alt={rating.profile.name}
-                        width={40}
-                        height={40}
-                        className="rounded-full mr-3"
-                      />
-                    )}
-                    <div>
-                      <p className="font-semibold text-gray-800">{rating.profile.name} from {rating.profile.country}</p>
-                      <p className="text-sm text-gray-500">{rating.date}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center mb-2">
-                    <span className="font-semibold text-yellow-500 text-xl mr-1">{rating.rating}</span>
-                    <span className="text-gray-500">/ 5 stars</span>
-                  </div>
-                  <p className="text-gray-700">{rating.review}</p>
-                </div>
-              ))
-            ) : (
-              <p className="text-gray-500">No reviews yet.</p>
-            )}
-          </div>
+          <Reviews ratings={opportunity.ratings} />
           <hr className="border-2 border-gray-200 mb-4 mt-12"></hr>
           
 

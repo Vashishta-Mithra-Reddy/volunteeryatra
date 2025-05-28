@@ -7,6 +7,7 @@ interface OpportunityCardProps {
     id: string;
     name: string;
     location: string;
+    mainRole: string;
     typeOfStay: string;
     images: string[];
     skillsRequired: string[];
@@ -37,18 +38,18 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
           </button>
 
           {/* New Tag */}
-          <div className="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded-full z-10">
+          <div className="absolute top-2 left-2 bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-sm z-10">
             New
           </div>
         </div>
 
         <div className="p-4">
           {/* Location with Map Pin */}
-          <p className="text-gray-600 text-sm mb-1 flex items-center gap-1">
+          <p className="text-gray-600 text-sm mb-2 mt-1 flex items-center gap-1">
             <MapPin className="w-4 h-4 text-green-500" /> {opportunity.location}
           </p>
 
-          <h3 className="font-bold text-xl mb-2 text-gray-800">{opportunity.name}</h3>
+          <h3 className="font-semibold text-xl mb-4 text-gray-800">Volunteer in {opportunity.location.split(",")[0]} as {opportunity.mainRole}</h3>
 
 
           {/* Skills */}
