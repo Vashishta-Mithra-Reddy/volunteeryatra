@@ -3,17 +3,25 @@
 import { opportunities } from "@/data/opportunities";
 import OpportunityCard from "@/components/OpportunityCard";
 import { Input } from "@/components/ui/input"; // Assuming shadcn input
-import { Button } from "@/components/ui/button"; // Assuming shadcn button
-import { Calendar } from "@/components/ui/calendar"; // Assuming shadcn calendar
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"; // Assuming shadcn popover
-import { format } from "date-fns";
 import { CalendarIcon, SearchIcon } from "lucide-react"; // Assuming lucide-react for icons
-import { cn } from "@/lib/utils"; // Assuming shadcn utils for class merging
 import React from "react";
+import { addDays, format } from "date-fns"
+import { DateRange } from "react-day-picker"
+
+import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 export default function OpportunitiesPage() {
-  const [date, setDate] = React.useState<Date | undefined>(undefined);
-
+  const [date, setDate] = React.useState<DateRange | undefined>({
+    from: new Date(2025, 5, 20),
+    to: addDays(new Date(2025, 5, 20), 20),
+  })
   return (
     <div className="min-h-screen bg-gray-100">
       <div className="w-full px-12 md:px-20 py-8">
