@@ -1,6 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { Heart, MapPin } from "lucide-react";
+import { useEffect, useState } from "react";
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+
+import Autoplay from "embla-carousel-autoplay";
 
 interface OpportunityCardProps {
   opportunity: {
@@ -24,17 +36,61 @@ interface OpportunityCardProps {
 }
 
 const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
+  const images = opportunity.images.length > 0 ? opportunity.images : ["/placeholder.jpg"];
+  const [api, setApi] = useState<CarouselApi | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    setSelectedIndex(api.selectedScrollSnap());
+
+    const onSelect = () => setSelectedIndex(api.selectedScrollSnap());
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
   return (
     <Link href={`/opportunities/${opportunity.id}`}>
       <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer relative">
+        {/* Carousel */}
         <div className="relative w-full h-48">
-          <Image
-            src={opportunity.images[0] || "/placeholder.jpg"}
-            alt={opportunity.name}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t-lg"
-          />
+          <Carousel
+            setApi={setApi}
+            plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}
+            className="w-full h-full"
+          >
+            <CarouselContent>
+              {images.map((imgSrc, index) => (
+                <CarouselItem key={index}>
+                  <div className="relative w-full h-48">
+                    <Image
+                      src={imgSrc}
+                      alt={`Image ${index + 1}`}
+                      fill
+                      className="object-cover rounded-t-lg"
+                      sizes="100vw"
+                      priority={index === 0}
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          {/* Dots */}
+          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-10">
+            {images.map((_, index) => (
+              <div
+                key={index}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  index === selectedIndex ? "bg-white" : "bg-gray-300"
+                }`}
+              />
+            ))}
+          </div>
 
           {/* Heart Button */}
           <button className="absolute top-2 right-2 p-2 rounded-full z-20 cursor-pointer transition-colors duration-300">
@@ -48,15 +104,15 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
         </div>
 
         <div className="p-4">
-          {/* Location with Map Pin */}
           <p className="text-gray-600 text-sm mb-2 mt-1 flex items-center gap-1">
-            <MapPin className="w-4 h-4 text-green-500" /> {opportunity.location}
+            <MapPin className="w-4 h-4 text-green-500" />
+            {opportunity.location}
           </p>
 
-          <h3 className="font-semibold text-xl mb-4 text-gray-800">Volunteer in {opportunity.location.split(",")[0]} as {opportunity.mainRole}</h3>
+          <h3 className="font-semibold text-xl mb-4 text-gray-800">
+            Volunteer in {opportunity.location.split(",")[0]} as {opportunity.mainRole}
+          </h3>
 
-
-          {/* Skills */}
           <div className="flex flex-wrap gap-2 mb-3 line-clamp-1">
             {opportunity.skillsRequired.slice(0, 2).map((skill, index) => (
               <span
@@ -72,19 +128,13 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
               </span>
             )}
           </div>
-          
-          {/* Additional Info */}
+
           <p className="text-gray-500 text-sm mb-2">
             {opportunity.whatYouOffer?.hoursPerDay * opportunity.whatYouOffer?.daysPerWeek}h/Week •{" "}
             {opportunity.minDurationWeeks && `At least ${opportunity.minDurationWeeks} weeks`}
           </p>
-          
-          <p className="text-gray-500 text-sm mb-2">
-            {opportunity.whatYouGet?.roomType}
-          </p>
 
-          {/* About */}
-          {/* <p className="text-gray-700 text-base line-clamp-3">{opportunity.aboutExperience}</p> */}
+          <p className="text-gray-500 text-sm mb-2">{opportunity.whatYouGet?.roomType}</p>
         </div>
       </div>
     </Link>
