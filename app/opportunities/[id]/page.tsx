@@ -4,6 +4,7 @@ import Link from "next/link";
 import Reviews from "@/components/Reviews";
 import { Share2, Heart, ArrowLeft, MapPin, Home, Hotel, User, Users, Clock, Calendar, Bed, Utensils, Bus, Gift, Coffee } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import OpportunityImages from "@/components/OppotunityImages";
 
 export default async function OpportunityDetailPage({
   params,
@@ -36,42 +37,10 @@ export default async function OpportunityDetailPage({
       </div>
 
       {/* Imagesx */}
-      <div className="hidden md:flex flex-col lg:flex-row gap-4 mb-8 px-4 sm:px-8 md:px-16">
-        <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] relative overflow-hidden shadow-md rounded-lg lg:rounded-l-3xl lg:rounded-r-none">
-          <Image
-            src={opportunity.images[0]}
-            alt={`${opportunity.name} main image`}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg lg:rounded-l-3xl lg:rounded-r-none"
-          />
-        </div>
-
-        <div className="w-full lg:w-1/2 grid grid-cols-2 grid-rows-2 gap-4">
-          {opportunity.images.slice(1, 5).map((image, index) => {
-            const roundingClass =
-              index === 1 ? 'lg:rounded-tr-3xl' : index === 3 ? 'lg:rounded-br-3xl' : '';
-
-            return (
-              <div
-                key={index}
-                className={`relative w-full h-36 sm:h-48 overflow-hidden shadow-md rounded-lg lg:rounded-none ${roundingClass}`}
-              >
-                <Image
-                  src={image}
-                  alt={`${opportunity.name} image ${index + 2}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className={roundingClass}
-                />
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <OpportunityImages opportunity={opportunity}/>
 
       {/* Carousel for smaller screens */}
-      <div className="relative sm:hidden w-full mb-4 h-64">
+      <div className="relative md:hidden w-full mb-4 h-64">
           <Carousel
             className="w-full h-full"
           >
@@ -92,17 +61,6 @@ export default async function OpportunityDetailPage({
               ))}
             </CarouselContent>
           </Carousel>
-
-          {/* Dots */}
-          {/* <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1 z-10">
-            {images.map((_, index) => (
-              <div
-                key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === selectedIndex ? "bg-white" : "bg-gray-300"
-                }`}
-              />
-            ))} */}
           </div>
 
       <div>

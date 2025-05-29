@@ -58,6 +58,9 @@ const OpportunityCard: React.FC<OpportunityCardProps> = ({ opportunity }) => {
         {/* Carousel */}
         <div className="relative w-full h-48">
           <Carousel
+            opts={{
+              loop: true,
+            }}
             setApi={setApi}
             plugins={[Autoplay({ delay: 3000, stopOnInteraction: false })]}
             className="w-full h-full"
